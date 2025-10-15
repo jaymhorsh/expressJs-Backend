@@ -1,14 +1,10 @@
 import express from 'express';
-
 import { getAllContacts, createContact, updateContact, deleteContact, getContactById } from '../controllers/contactControllers.js';
 const router = express.Router();
 router.route('/').get(getAllContacts).post(createContact);
 router.route('/:id').get(getContactById).put(updateContact).delete(deleteContact);
 
-
 export default router;
-
-
 
 //  const express = require('express');
 // const { body, validationResult } = require('express-validator');
@@ -24,11 +20,11 @@ export default router;
 // // @access  Public
 // router.post(
 //   '/register',
-//   [
-//     body('name').trim().isLength({ min: 2 }).withMessage('Name must be at least 2 characters'),
-//     body('email').isEmail().normalizeEmail().withMessage('Please provide a valid email'),
-//     body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
-//   ],
+// [
+//   body('name').trim().isLength({ min: 2 }).withMessage('Name must be at least 2 characters'),
+//   body('email').isEmail().normalizeEmail().withMessage('Please provide a valid email'),
+//   body('password').isLength({ min: 6 }).withMessage('Password must be at least 6 characters'),
+// ],
 //   async (req, res) => {
 //     try {
 //       const errors = validationResult(req);
