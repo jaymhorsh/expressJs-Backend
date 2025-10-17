@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { connectDB } from './database/connection.js';
 
 dotenv.config();
-
-app.use(cors());
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(cors());
+connectDB();
 // Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
 // Middleware functions can perform the following tasks:
 // Execute any code.
@@ -31,6 +31,7 @@ app.get('/', (req, res) => {
   res.send('Hello Welcome to Node API Server World!');
 });
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
