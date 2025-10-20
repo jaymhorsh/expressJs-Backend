@@ -11,7 +11,7 @@ connectDB();
 // Middleware functions can perform the following tasks:
 // Execute any code.
 // Make changes to the request and the response objects.
-// End the request-response cycle.
+// End the request-response cycle.   
 // Call the next middleware function in the stack.
 
 //simple middleware function that logs request details
