@@ -6,10 +6,9 @@ export const getProducts = (req, res) => {
 };
 export const createProduct = async (req, res) => {
   let response = {};
-    console.log('Request Body:', req.body);
+  console.log('Request Body:', req.body);
   try {
     const responseFromService = await productService(req.body);
-  
     response.status = 200;
     response.message = 'Product created successfully';
     response.body = responseFromService;
